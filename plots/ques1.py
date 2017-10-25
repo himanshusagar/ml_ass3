@@ -1,5 +1,8 @@
+import numpy as np
+
 from src.src_networks import large_main
 import matplotlib.pyplot as plt
+MAX_EPOCH  = 101
 
 if __name__ == '__main__':
 
@@ -20,8 +23,9 @@ if __name__ == '__main__':
 
 
         y_axis = []
-        x_axis_epoch = range(0 , 100 , 10)
+        x_axis_epoch = range(0 , MAX_EPOCH , 10)
         out = large_main(prefix).epoch_outputs
+        print("out Shape" , len(out)  , np.shape(out))
 
         for i in range(len(x_axis_epoch)):
             y_axis.append(out[x_axis_epoch[i]])

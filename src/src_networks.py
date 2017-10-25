@@ -44,8 +44,8 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
 
         clf.set_valid_data(X_test , y_test)
 
-
-        clf.fit(X_train, y_train, n_epochs=50 , batch_size=int(batch_size))
+        from plots.ques1 import MAX_EPOCH
+        clf.fit(X_train, y_train, n_epochs= MAX_EPOCH , batch_size=int(batch_size))
 
 
         y_pred = clf.predict(X_test);

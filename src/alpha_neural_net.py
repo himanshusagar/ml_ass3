@@ -1,5 +1,4 @@
 from __future__ import print_function
-from terminaltables import AsciiTable
 import numpy as np
 
 from helper import cross_entropy

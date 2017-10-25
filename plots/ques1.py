@@ -41,4 +41,5 @@ if __name__ == '__main__':
         ax1.grid('on')
 
         plt.savefig("large_" + internal + "_"  + output)
-        plt.show()
+        #plt.show()
+        plt.clf()

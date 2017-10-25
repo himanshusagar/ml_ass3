@@ -11,10 +11,10 @@ n_hidden_one = 100
 n_hidden_two = 50
 
 CLASS_COUNT = 10;
-
-X_train, y_train = dataset_creater.loadIT("train")
-X_test, y_test = dataset_creater.loadIT("test")
-
+#
+# X_train, y_train = dataset_creater.loadIT("train")
+# X_test, y_test = dataset_creater.loadIT("test")
+#
 
 def main():
     small_main("ques1a")
@@ -86,7 +86,7 @@ def small_main(activation):
 
 def large_main(prefix):
     X_train, y_train = dataset_creater.loadIT("train")
-    X_valid, y_valid = dataset_creater.loadIT("valid")
+    X_valid, y_valid = dataset_creater.loadIT("test")
 
     internal = None;
     output = None;

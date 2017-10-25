@@ -2,7 +2,7 @@ import numpy as np
 
 from src.src_networks import large_main
 import matplotlib.pyplot as plt
-MAX_EPOCH  = 101
+MAX_EPOCH  = 51
 
 if __name__ == '__main__':
 

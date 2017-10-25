@@ -111,7 +111,7 @@ def large_main(prefix):
     else:
         return ;
 
-    return k_fold_compute(X_train, y_train, X_valid, y_valid,internal , output , prefix)
+    return k_fold_compute(X_train, y_train, X_valid, y_valid,internal , output , 'large')
 
 
 if __name__ == '__main__':

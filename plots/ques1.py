@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
 
         y_axis = []
-        x_axis_epoch = range(0 , MAX_EPOCH , 10)
+        x_axis_epoch = range(0 , MAX_EPOCH , 2)
         out = large_main(prefix).epoch_outputs
         print("out Shape" , len(out)  , np.shape(out))
 

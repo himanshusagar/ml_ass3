@@ -7,6 +7,7 @@ from helper import cross_entropy
 IN_SHAPE = 28 * 28
 
 
+
 from utility import scores
 
 
@@ -15,6 +16,8 @@ class AlphaNeuralNetwork():
         n_hidden_one = 100
         n_hidden_two = 50
         self.layers = []
+
+        self.epoch_outputs = []
 
         if(class_count <= 0):
             raise ValueError("Class Count should be Non-Neg ")
@@ -86,6 +89,8 @@ class AlphaNeuralNetwork():
                 cummulative_batch_error += iLoss
 
             print("Epoch = {0}/{1}  = {2} ".format(i_epoch, n_epochs, cummulative_batch_error))
+            from utility.scores import accuracy_score
+            self.epoch_outputs.append( accuracy_score( self.validY , self.predict(self.validX) ) );
 
 
     def _feed_forward(self, X):
@@ -109,6 +114,10 @@ class AlphaNeuralNetwork():
 
     def predict(self, X):
         return np.argmax(self._feed_forward(X) , axis=1 )
+
+    def set_valid_data(self ,validX , validY):
+        self.validX = validX;
+        self.validY = validY;
 
 
 if __name__ == "__main__":

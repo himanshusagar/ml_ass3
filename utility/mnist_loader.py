@@ -1,3 +1,6 @@
+
+#Copied from Michael Nichelson's Code : neuralnetworksanddeeeplearning.com
+
 """
 mnist_loader
 ~~~~~~~~~~~~

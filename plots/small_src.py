@@ -21,7 +21,6 @@ if __name__ == '__main__':
         else:
             exit(1);
 
-
         x_axis_epoch = range(0 , MAX_EPOCH , 2)
         all_models = small_main(internal , output)
 

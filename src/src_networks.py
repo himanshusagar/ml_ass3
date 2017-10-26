@@ -17,10 +17,11 @@ CLASS_COUNT = 10;
 #
 
 def main():
-    small_main("ques1a")
+    large_main("sigmoid" , "softmax" )
     #    large_main('ques1ca');
 
 def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=None, prefix=None):
+
 
     skf = StratifiedKFold(n_splits=3)
     best_accuracy = 0.0;
@@ -32,8 +33,10 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
     for train_index , test_index in skf.split(X , y):
         X_train  , X_test = X[train_index] , X[test_index]
         y_train, y_test = y[train_index], y[test_index]
-        y_test[ np.where(y_test == np.min(uniq_clas) ) ] = 0
-        y_test[np.where(y_test == np.max(uniq_clas))] = 1
+
+        if(prefix == 'small' ):
+            y_test[ np.where(y_test == np.min(uniq_clas) ) ] = 0
+            y_test[np.where(y_test == np.max(uniq_clas))] = 1
 
         clf = AlphaNeuralNetwork(n_classes  , internal_layers , output_layer )
 

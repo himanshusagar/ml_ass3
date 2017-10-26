@@ -15,6 +15,7 @@ class AlphaNeuralNetwork():
         n_hidden_one = 100
         n_hidden_two = 50
         self.layers = []
+        self.doNothin_cant_leave_empty = True
 
         self.epoch_outputs = []
 
@@ -101,11 +102,14 @@ class AlphaNeuralNetwork():
                 cummulative_batch_error += iLoss
 
             print("Epoch = {0}/{1}  = {2} ".format(i_epoch, n_epochs, cummulative_batch_error))
+
             from utility.scores import accuracy_score
-            try:
-                self.epoch_outputs.append( accuracy_score( self.validY , self.predict(self.validX) ) );
-            except AttributeError:
-                doNothin_cant_leave_empty = True
+
+            if not self.doNothin_cant_leave_empty :
+                try:
+                    self.epoch_outputs.append( accuracy_score( self.validY , self.predict(self.validX) ) );
+                except AttributeError:
+                    self.doNothin_cant_leave_empty = True
 
 
     def _feed_forward(self, X):
@@ -133,6 +137,7 @@ class AlphaNeuralNetwork():
     def set_valid_data(self ,validX , validY):
         self.validX = validX;
         self.validY = validY;
+        self.doNothin_cant_leave_empty = False
 
 
 if __name__ == "__main__":

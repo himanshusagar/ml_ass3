@@ -29,21 +29,13 @@ def gen_epoch_res(X, y, X_valid, y_valid, activaton , prefix , epochs_list):
     skf = StratifiedKFold(n_splits=3)
     best_accuracy = 1e-15
     best_model = None
-    best_fold = -1;
 
-    foldIndex = 0
     for train_index , test_index in skf.split(X , y):
-        foldIndex  = foldIndex + 1;
 
-        print( foldIndex , "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter = 1, alpha=0.0,
                             solver='adam', verbose=10, tol=1e-4, random_state=1,
                             activation=activaton,
-                            early_stopping=True,
-                            validation_fraction=0.2
-
                             )
-        #print(mlp)
 
         X_train  , X_test = X[train_index] , X[test_index]
         y_train, y_test = y[train_index], y[test_index]
@@ -56,10 +48,8 @@ def gen_epoch_res(X, y, X_valid, y_valid, activaton , prefix , epochs_list):
         if(iter_accuracy >best_accuracy ):
             best_accuracy = iter_accuracy
             best_model = mlp
-            best_fold = foldIndex;
 
         print("iFold Accuracy : ", iter_accuracy, " Best:", best_accuracy)
-        print("\033c")
 
     y_pred = best_model.predict(X_valid)
     valid_accuracy = accuracy_score(y_valid , y_pred)

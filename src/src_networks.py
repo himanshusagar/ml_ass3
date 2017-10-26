@@ -25,6 +25,7 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
     skf = StratifiedKFold(n_splits=3)
     best_accuracy = 0.0;
 
+    all_models = []
     uniq_clas = np.unique(y);
     n_classes =  np.size(uniq_clas)
 
@@ -44,9 +45,10 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
 
         clf.set_valid_data(X_test , y_test)
 
-        from plots.ques1 import MAX_EPOCH
+        from plots.large_src import MAX_EPOCH
         clf.fit(X_train, y_train, n_epochs= MAX_EPOCH , batch_size=int(batch_size))
 
+        all_models.append(clf)
 
         y_pred = clf.predict(X_test);
 
@@ -56,7 +58,7 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
             best_accuracy = iter_accuracy
             best_model = clf
         print("iFold Accuracy : ", iter_accuracy, " Best:", best_accuracy)
-        break;
+
 
 
     y_pred = best_model.predict(X_valid)
@@ -68,10 +70,11 @@ def k_fold_compute(X, y, X_valid, y_valid, internal_layers=None , output_layer=N
 
     joblib.dump(best_model, "../models/" +"custom_" + prefix + "_" + internal_layers + "_" +  output_layer + "_model_pkl");
 
-    return best_model;
+    all_models.append(best_model);
+    return all_models;
 
 
-def small_main(activation):
+def small_main(internal , output):
     X_raw, y = dataset_creater.loadSmallbset();
     X = np.zeros( (X_raw.shape[0] , 784) )
 
@@ -81,35 +84,13 @@ def small_main(activation):
     X_train, X_test, y_train, y_test = train_test_split( X, y, test_size = 0.1, random_state = 42)
 
 
-    k_fold_compute(X_train, y_train, X_test, y_test, "sigmoid" , "sigmoid" , "ques1a")
+    return k_fold_compute(X_train, y_train, X_test, y_test, internal , output , 'small')
 
 
-def large_main(prefix):
+def large_main( internal  , output ):
     X_train, y_train = dataset_creater.loadIT("train")
     X_valid, y_valid = dataset_creater.loadIT("test")
 
-    internal = None;
-    output = None;
-
-    # if(prefix == 'ques1a'):
-    #     internal = 'sigmoid'
-    #     output = 'sigmoid'
-    # el
-    if(prefix == 'ques1b'):
-        internal = 'sigmoid'
-        output = 'softmax'
-        # ques1c means relu
-    # elif(prefix == 'ques1ca'):
-    #     internal = 'relu'
-    #     output = 'sigmoid'
-    elif (prefix == 'ques1cb'):
-        internal = 'relu'
-        output = 'softmax'
-    elif(prefix == 'ques1da'):
-        #ques 1d means maxout
-        return ;
-    else:
-        return ;
 
     return k_fold_compute(X_train, y_train, X_valid, y_valid,internal , output , 'large')
 

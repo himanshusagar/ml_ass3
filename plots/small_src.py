@@ -1,41 +1,40 @@
 import numpy as np
 
-from src.src_networks import large_main
+from src.src_networks import small_main
 import matplotlib.pyplot as plt
 MAX_EPOCH  = 51
 
 if __name__ == '__main__':
 
-    for prefix in ["ques1b" , "ques1cb"]:
+    for prefix in ["ques1a" , "ques1ca" , 'ques1da' ]:
 
-        if (prefix == 'ques1b'):
+        if (prefix == 'ques1a'):
             internal = 'sigmoid'
-            output = 'softmax'
+            output = 'sigmoid'
             # ques1c means relu
-        elif (prefix == 'ques1cb'):
+        elif (prefix == 'ques1ca'):
             internal = 'relu'
-            output = 'softmax'
+            output = 'sigmoid'
         elif (prefix == 'ques1da'):
             internal = 'maxout'
-            output = 'softmax'
-
+            output = 'sigmoid'
         else:
             exit(1);
 
 
         x_axis_epoch = range(0 , MAX_EPOCH , 2)
-        all_models = [1,2,3,4]#large_main(prefix)
+        all_models = small_main(internal , output)
 
-        y_stack = None# np.empty();
+        y_stack = None
 
         for i in range(len(all_models)):
             y_axis = []
-            out = np.arange(51);#all_models[i].epoch_outputs
+            out = all_models[i].epoch_outputs
 
             print("out Shape" , len(out)  , np.shape(out))
 
             for j in range(len(x_axis_epoch)):
-                y_axis.append(out[x_axis_epoch[j]])
+                y_axis.append( out[x_axis_epoch[j]])
 
             y_axis = np.asarray( y_axis );
             if y_stack is not None:
@@ -59,7 +58,7 @@ if __name__ == '__main__':
         plt.xlabel("Epoch Count")
 
         handles, labels = ax1.get_legend_handles_labels()
-        lgd = ax1.legend(handles, labels, loc='upper center', bbox_to_anchor=(1.5, 1))
+        lgd = ax1.legend(handles, labels)
         ax1.grid('on')
 
         plt.savefig("large_" + internal + "_"  + output)

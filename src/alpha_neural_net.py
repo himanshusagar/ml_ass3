@@ -32,7 +32,7 @@ class AlphaNeuralNetwork():
         elif(internal_layers == 'maxout'):
             from helper.maxout_layer import DenseMaxOutLayer
             self.add(DenseMaxOutLayer(n_hidden_one, input_shape=(IN_SHAPE,)))
-          #  self.add(DenseMaxOutLayer(n_hidden_two))
+            self.add(DenseMaxOutLayer(n_hidden_two))
 
         if(output_layer == 'softmax'):
             from helper.softmax_layer import DenseSoftmaxLayer

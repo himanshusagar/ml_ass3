@@ -16,25 +16,40 @@ if __name__ == '__main__':
             internal = 'relu'
             output = 'softmax'
         elif (prefix == 'ques1da'):
-            # ques 1d means maxout
-            exit(1);
+            internal = 'maxout'
+            output = 'softmax'
+
         else:
             exit(1);
 
 
-        y_axis = []
         x_axis_epoch = range(0 , MAX_EPOCH , 2)
-        out = large_main(prefix).epoch_outputs
-        print("out Shape" , len(out)  , np.shape(out))
+        all_models = large_main(prefix)
 
-        for i in range(len(x_axis_epoch)):
-            y_axis.append(out[x_axis_epoch[i]])
+        y_stack = np.empty();
+
+        for i in range(len(all_models)):
+            y_axis = []
+            out = all_models[i].epoch_outputs
+
+            print("out Shape" , len(out)  , np.shape(out))
+
+            for i in range(len(x_axis_epoch)):
+                y_axis.append(out[x_axis_epoch[i]])
+
+            y_stack  = np.row_stack(y_stack  , y_axis);
 
 
         x_axis = x_axis_epoch[:len(y_axis)]
+        y_axis = None;
+
         fig = plt.figure(figsize=(11, 8))
         ax1 = fig.add_subplot(111)
-        ax1.plot(x_axis, y_axis, label="Accuracy Graph", color='c', marker='o')
+
+        ax1.plot(x_axis, y_stack[0, :], label='Fold 1', color='c', marker='o')
+        ax1.plot(x_axis, y_stack[1, :], label='Fold 2', color='g', marker='o')
+        ax1.plot(x_axis, y_stack[2, :], label='Fold 3', color='r', marker='o')
+        ax1.plot(x_axis, y_stack[3, :], label='Best Model', color='b', marker='o')
 
         plt.ylabel("Accuracy ")
         plt.xticks(x_axis)

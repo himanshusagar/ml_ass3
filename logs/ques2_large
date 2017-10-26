@@ -1,0 +1,251 @@
+D:\ML\Projects\MLPython2VirtualEnv\Scripts\python.exe D:/ML/Projects/PycharmProjects/Homework3/ml_ass3/plots/ques2.py
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (2) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 2)
+('Acc', 0.9092)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (4) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 4)
+('Acc', 0.9371)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (10) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 10)
+('Acc', 0.9619)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+Iteration 11, loss = 0.11173538
+Iteration 12, loss = 0.10325816
+Iteration 13, loss = 0.09494008
+Iteration 14, loss = 0.08845378
+Iteration 15, loss = 0.08209425
+Iteration 16, loss = 0.07711675
+Iteration 17, loss = 0.07170636
+Iteration 18, loss = 0.06687616
+Iteration 19, loss = 0.06323829
+Iteration 20, loss = 0.05869415
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (20) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 20)
+('Acc', 0.9693)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+Iteration 11, loss = 0.11173538
+Iteration 12, loss = 0.10325816
+Iteration 13, loss = 0.09494008
+Iteration 14, loss = 0.08845378
+Iteration 15, loss = 0.08209425
+Iteration 16, loss = 0.07711675
+Iteration 17, loss = 0.07170636
+Iteration 18, loss = 0.06687616
+Iteration 19, loss = 0.06323829
+Iteration 20, loss = 0.05869415
+Iteration 21, loss = 0.05513561
+Iteration 22, loss = 0.05212795
+Iteration 23, loss = 0.04875393
+Iteration 24, loss = 0.04616584
+Iteration 25, loss = 0.04348376
+Iteration 26, loss = 0.04086521
+Iteration 27, loss = 0.03865296
+Iteration 28, loss = 0.03607615
+Iteration 29, loss = 0.03458302
+Iteration 30, loss = 0.03153065
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (30) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 30)
+('Acc', 0.9697)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+Iteration 11, loss = 0.11173538
+Iteration 12, loss = 0.10325816
+Iteration 13, loss = 0.09494008
+Iteration 14, loss = 0.08845378
+Iteration 15, loss = 0.08209425
+Iteration 16, loss = 0.07711675
+Iteration 17, loss = 0.07170636
+Iteration 18, loss = 0.06687616
+Iteration 19, loss = 0.06323829
+Iteration 20, loss = 0.05869415
+Iteration 21, loss = 0.05513561
+Iteration 22, loss = 0.05212795
+Iteration 23, loss = 0.04875393
+Iteration 24, loss = 0.04616584
+Iteration 25, loss = 0.04348376
+Iteration 26, loss = 0.04086521
+Iteration 27, loss = 0.03865296
+Iteration 28, loss = 0.03607615
+Iteration 29, loss = 0.03458302
+Iteration 30, loss = 0.03153065
+Iteration 31, loss = 0.02972650
+Iteration 32, loss = 0.02793915
+Iteration 33, loss = 0.02638035
+Iteration 34, loss = 0.02475714
+Iteration 35, loss = 0.02307559
+Iteration 36, loss = 0.02153764
+Iteration 37, loss = 0.02005877
+Iteration 38, loss = 0.01926276
+Iteration 39, loss = 0.01812634
+Iteration 40, loss = 0.01661652
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (40) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 40)
+('Acc', 0.9681)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+Iteration 11, loss = 0.11173538
+Iteration 12, loss = 0.10325816
+Iteration 13, loss = 0.09494008
+Iteration 14, loss = 0.08845378
+Iteration 15, loss = 0.08209425
+Iteration 16, loss = 0.07711675
+Iteration 17, loss = 0.07170636
+Iteration 18, loss = 0.06687616
+Iteration 19, loss = 0.06323829
+Iteration 20, loss = 0.05869415
+Iteration 21, loss = 0.05513561
+Iteration 22, loss = 0.05212795
+Iteration 23, loss = 0.04875393
+Iteration 24, loss = 0.04616584
+Iteration 25, loss = 0.04348376
+Iteration 26, loss = 0.04086521
+Iteration 27, loss = 0.03865296
+Iteration 28, loss = 0.03607615
+Iteration 29, loss = 0.03458302
+Iteration 30, loss = 0.03153065
+Iteration 31, loss = 0.02972650
+Iteration 32, loss = 0.02793915
+Iteration 33, loss = 0.02638035
+Iteration 34, loss = 0.02475714
+Iteration 35, loss = 0.02307559
+Iteration 36, loss = 0.02153764
+Iteration 37, loss = 0.02005877
+Iteration 38, loss = 0.01926276
+Iteration 39, loss = 0.01812634
+Iteration 40, loss = 0.01661652
+Iteration 41, loss = 0.01560054
+Iteration 42, loss = 0.01465643
+Iteration 43, loss = 0.01343612
+Iteration 44, loss = 0.01262676
+Iteration 45, loss = 0.01159969
+Iteration 46, loss = 0.01092654
+Iteration 47, loss = 0.01064146
+Iteration 48, loss = 0.00965816
+Iteration 49, loss = 0.00882228
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (50) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+Iteration 50, loss = 0.00820753
+('Epoch', 50)
+('Acc', 0.9703)
+Iteration 1, loss = 1.44500978
+Iteration 2, loss = 0.48117253
+Iteration 3, loss = 0.32026084
+Iteration 4, loss = 0.25674213
+Iteration 5, loss = 0.21725117
+Iteration 6, loss = 0.18865503
+Iteration 7, loss = 0.16651451
+Iteration 8, loss = 0.14901916
+Iteration 9, loss = 0.13453030
+Iteration 10, loss = 0.12296296
+Iteration 11, loss = 0.11173538
+Iteration 12, loss = 0.10325816
+Iteration 13, loss = 0.09494008
+Iteration 14, loss = 0.08845378
+Iteration 15, loss = 0.08209425
+Iteration 16, loss = 0.07711675
+Iteration 17, loss = 0.07170636
+Iteration 18, loss = 0.06687616
+Iteration 19, loss = 0.06323829
+Iteration 20, loss = 0.05869415
+Iteration 21, loss = 0.05513561
+Iteration 22, loss = 0.05212795
+Iteration 23, loss = 0.04875393
+Iteration 24, loss = 0.04616584
+Iteration 25, loss = 0.04348376
+Iteration 26, loss = 0.04086521
+Iteration 27, loss = 0.03865296
+Iteration 28, loss = 0.03607615
+Iteration 29, loss = 0.03458302
+Iteration 30, loss = 0.03153065
+Iteration 31, loss = 0.02972650
+Iteration 32, loss = 0.02793915
+Iteration 33, loss = 0.02638035
+Iteration 34, loss = 0.02475714
+Iteration 35, loss = 0.02307559
+Iteration 36, loss = 0.02153764
+Iteration 37, loss = 0.02005877
+Iteration 38, loss = 0.01926276
+Iteration 39, loss = 0.01812634
+Iteration 40, loss = 0.01661652
+Iteration 41, loss = 0.01560054
+Iteration 42, loss = 0.01465643
+Iteration 43, loss = 0.01343612
+Iteration 44, loss = 0.01262676
+Iteration 45, loss = 0.01159969
+Iteration 46, loss = 0.01092654
+Iteration 47, loss = 0.01064146
+Iteration 48, loss = 0.00965816
+Iteration 49, loss = 0.00882228
+Iteration 50, loss = 0.00820753
+Iteration 51, loss = 0.00759007
+Iteration 52, loss = 0.00726370
+Iteration 53, loss = 0.00684813
+Iteration 54, loss = 0.00624104
+Iteration 55, loss = 0.00581409
+Iteration 56, loss = 0.00542880
+Iteration 57, loss = 0.00493891
+Iteration 58, loss = 0.00463608
+Iteration 59, loss = 0.00459580
+Iteration 60, loss = 0.00420938
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (60) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 60)
+('Acc', 0.9693)
+
+Process finished with exit code 0

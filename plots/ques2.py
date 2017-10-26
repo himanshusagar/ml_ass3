@@ -1,26 +1,67 @@
 import joblib
 import numpy as np
-from sklearn.model_selection import StratifiedKFold
-from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import train_test_split
 
 from utility import dataset_creater
 import matplotlib.pyplot as plt
 
-import os
-from utility.scores import accuracy_score
+
+def main(X_train , y_train , X_valid , y_valid , prefix):
 
 
-from cStringIO import StringIO
-import sys
-#
-# old_stdout = sys.stdout
-# sys.stdout = mystdout = StringIO()
-#
-# # blah blah lots of code ...
-#
-# sys.stdout = old_stdout
+
+    y_axis = []
+    x_axis_epoch = [ 2, 4 , 10 , 20 , 30 , 40 , 50 , 60 ];
+
+    from impl.impl_networks import gen_plot_res
+    for iEpoch in x_axis_epoch:
+        y_axis.append( gen_plot_res(X_train , y_train , X_valid , y_valid,  iEpoch ))
 
 
+    x_axis = x_axis_epoch[:len(y_axis)]
+    fig = plt.figure( figsize=(11,8))
+    ax1 = fig.add_subplot(111)
+    ax1.plot( x_axis , y_axis , label ="Accuracy Graph" , color='c' , marker='o')
+
+
+    plt.ylabel("Accuracy ")
+    plt.xticks(x_axis)
+    plt.xlabel("Epoch Count")
+
+    handles , labels = ax1.get_legend_handles_labels()
+    lgd = ax1.legend(handles , labels , loc = 'upper center' , bbox_to_anchor = (1.5 , 1) )
+    ax1.grid('on')
+
+
+    plt.savefig("../figures/"+ prefix + "_sigmoid")
+    plt.show()
+
+
+
+
+if __name__ == '__main__':
+
+    X_train , y_train = dataset_creater.loadIT("train")
+
+    X_valid, y_valid = dataset_creater.loadIT("test")
+
+    main(X_train , y_train  , X_valid ,  y_valid , 'large');
+
+#    exit(0)
+
+    # X_raw, y = dataset_creater.loadSmallbset();
+    #
+    # X = np.zeros((X_raw.shape[0], 784))
+    # for i in xrange(np.shape(X)[0]):
+    #     X[i] = X_raw[i].flatten()
+    #
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+    #
+    # main(X_train, y_train, X_test, y_test , "small")
+
+
+
+'''
 def gen_epoch_res(X, y, X_valid, y_valid, activaton , prefix , epochs_list):
 
     if(activaton == "sigmoid"):
@@ -55,54 +96,9 @@ def gen_epoch_res(X, y, X_valid, y_valid, activaton , prefix , epochs_list):
     valid_accuracy = accuracy_score(y_valid , y_pred)
 
     print("######################");
-    print("...................")
-    print("Best Fold Index = " , best_fold)
     print("Validation Accuracy : ", valid_accuracy)
 
     joblib.dump(best_model, "../models/" + prefix + "_" + activaton + "_model_pkl");
 
-    return [valid_accuracy]
-
-
-def main():
-    X_train , y_train = dataset_creater.loadIT("train")
-
-    X_valid, y_valid = dataset_creater.loadIT("test")
-
-
-
-    y_axis = []
-    x_axis_epoch = [ 2, 4 , 10 , 20 , 30 , 40 , 50 , 60 ];
-
-
-    y_axis = gen_epoch_res(X_train , y_train , X_valid , y_valid , 'logistic' , "large" ,  x_axis_epoch)
-
-
-
-    # for iEpoch in x_axis :
-    #     iAcc = gen_plot_res(X_train, y_train, X_valid, y_valid , iEpoch)
-    #     y_axis.append(iAcc)
-    #     if(iEpoch == 4):
-    #         break;
-
-    x_axis = x_axis_epoch[:len(y_axis)]
-    fig = plt.figure( figsize=(11,8))
-    ax1 = fig.add_subplot(111)
-    ax1.plot( x_axis , y_axis , label ="Accuracy Graph" , color='c' , marker='o')
-
-
-    plt.ylabel("Accuracy ")
-    plt.xticks(x_axis)
-    plt.xlabel("Epoch Count")
-
-    handles , labels = ax1.get_legend_handles_labels()
-    lgd = ax1.legend(handles , labels , loc = 'upper center' , bbox_to_anchor = (1.5 , 1) )
-    ax1.grid('on')
-
-
-    plt.savefig( "large_" + "sigmoid")
-    plt.show()
-
-
-if __name__ == '__main__':
-    main();
+    return valid_accuracy
+'''

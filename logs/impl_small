@@ -1,0 +1,108 @@
+D:\ML\Projects\MLPython2VirtualEnv\Scripts\python.exe D:/ML/Projects/PycharmProjects/Homework3/ml_ass3/impl/impl_networks.py
+MLPClassifier(activation='logistic', alpha=0.0001, batch_size='auto',
+       beta_1=0.9, beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(50, 100), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=81, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=42, shuffle=True,
+       solver='adam', tol=0.0001, validation_fraction=0.1, verbose=1,
+       warm_start=False)
+Iteration 1, loss = 0.50298240
+Iteration 2, loss = 0.18013691
+Iteration 3, loss = 0.12759473
+Iteration 4, loss = 0.10559215
+Iteration 5, loss = 0.09754488
+Iteration 6, loss = 0.08687199
+Iteration 7, loss = 0.07995659
+Iteration 8, loss = 0.07536487
+Iteration 9, loss = 0.06952370
+Iteration 10, loss = 0.06729749
+Iteration 11, loss = 0.06029477
+Iteration 12, loss = 0.06020734
+Iteration 13, loss = 0.06119222
+Iteration 14, loss = 0.05962444
+Iteration 15, loss = 0.05665787
+Iteration 16, loss = 0.05368642
+Iteration 17, loss = 0.04602339
+Iteration 18, loss = 0.04544077
+Iteration 19, loss = 0.04691651
+Iteration 20, loss = 0.04492025
+Iteration 21, loss = 0.04366309
+Iteration 22, loss = 0.04930884
+Iteration 23, loss = 0.05016305
+Iteration 24, loss = 0.04446736
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('iFold Accuracy : ', 0.9775491113189897, ' Best:', 0.9775491113189897)
+MLPClassifier(activation='logistic', alpha=0.0001, batch_size='auto',
+       beta_1=0.9, beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(50, 100), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=81, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=42, shuffle=True,
+       solver='adam', tol=0.0001, validation_fraction=0.1, verbose=1,
+       warm_start=False)
+Iteration 1, loss = 0.50167433
+Iteration 2, loss = 0.18540591
+Iteration 3, loss = 0.12735802
+Iteration 4, loss = 0.10370511
+Iteration 5, loss = 0.09413553
+Iteration 6, loss = 0.08499118
+Iteration 7, loss = 0.07890223
+Iteration 8, loss = 0.07289079
+Iteration 9, loss = 0.06790139
+Iteration 10, loss = 0.06225851
+Iteration 11, loss = 0.06495832
+Iteration 12, loss = 0.05913522
+Iteration 13, loss = 0.05230597
+Iteration 14, loss = 0.05567773
+Iteration 15, loss = 0.04919768
+Iteration 16, loss = 0.04474850
+Iteration 17, loss = 0.04364554
+Iteration 18, loss = 0.04771520
+Iteration 19, loss = 0.04666661
+Iteration 20, loss = 0.04339464
+Iteration 21, loss = 0.04351278
+Iteration 22, loss = 0.03860579
+Iteration 23, loss = 0.04036243
+Iteration 24, loss = 0.03657424
+Iteration 25, loss = 0.03472652
+Iteration 26, loss = 0.04160790
+Iteration 27, loss = 0.03449372
+Iteration 28, loss = 0.03773342
+Iteration 29, loss = 0.03514890
+Iteration 30, loss = 0.03526156
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('iFold Accuracy : ', 0.9801169590643275, ' Best:', 0.9801169590643275)
+MLPClassifier(activation='logistic', alpha=0.0001, batch_size='auto',
+       beta_1=0.9, beta_2=0.999, early_stopping=False, epsilon=1e-08,
+       hidden_layer_sizes=(50, 100), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=81, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=42, shuffle=True,
+       solver='adam', tol=0.0001, validation_fraction=0.1, verbose=1,
+       warm_start=False)
+Iteration 1, loss = 0.48724659
+Iteration 2, loss = 0.17956597
+Iteration 3, loss = 0.13100571
+Iteration 4, loss = 0.11744139
+Iteration 5, loss = 0.10657113
+Iteration 6, loss = 0.09297608
+Iteration 7, loss = 0.08948345
+Iteration 8, loss = 0.07770312
+Iteration 9, loss = 0.07332230
+Iteration 10, loss = 0.06779915
+Iteration 11, loss = 0.06598986
+Iteration 12, loss = 0.06592964
+Iteration 13, loss = 0.06617964
+Iteration 14, loss = 0.06050307
+Iteration 15, loss = 0.05861368
+Iteration 16, loss = 0.05771561
+Iteration 17, loss = 0.05434005
+Iteration 18, loss = 0.05819968
+Iteration 19, loss = 0.05634141
+Iteration 20, loss = 0.05888269
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('iFold Accuracy : ', 0.9808142255498362, ' Best:', 0.9808142255498362)
+...................
+('Validation Accuracy : ', 0.9782608695652174)
+Iteration 21, loss = 0.05625071
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+
+Process finished with exit code 0

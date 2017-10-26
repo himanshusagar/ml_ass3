@@ -1,4 +1,4 @@
-import joblib
+
 import numpy as np
 from sklearn.datasets import fetch_mldata
 from sklearn.model_selection import train_test_split, StratifiedKFold
@@ -23,7 +23,10 @@ def gen_plot_res(X, y, X_valid, y_valid  ,n_epochs):
     mlp.fit(X, y )
 
     y_pred = mlp.predict(X_valid);
-    accuracy = accuracy_score( y_valid ,  y_pred)
+    accuracy = accuracy_score(y_valid, y_pred)
+
+    print("Epoch" , n_epochs)
+    print("Acc"  , accuracy)
     return accuracy;
 
 
@@ -38,7 +41,9 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 
     for train_index , test_index in skf.split(X , y):
 
-        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=51, alpha=1e-4,
+
+        from plots.large_src import MAX_EPOCH
+        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=MAX_EPOCH, alpha=1e-4,
                             solver='adam', verbose=1, tol=1e-4, random_state=42,
                             activation=activaton
                             )
@@ -63,6 +68,7 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 
     best_model.partial_fit(X_valid , y_valid)
 
+    from sklearn.externals import joblib
     joblib.dump(best_model, "../models/sklearn_" + prefix + "_" + activaton + "_model_pkl");
 
 
@@ -70,12 +76,10 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 def small_main(activation):
     X_raw, y = dataset_creater.loadSmallbset();
 
-
     X = np.zeros( (X_raw.shape[0] , 784) )
-
-
     for i in xrange(np.shape(X)[0]):
         X[i] = X_raw[i].flatten()
+
 
     X_train, X_test, y_train, y_test = train_test_split( X, y, test_size = 0.1, random_state = 42)
 

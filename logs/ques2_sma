@@ -1,0 +1,116 @@
+D:\ML\Projects\MLPython2VirtualEnv\Scripts\python.exe D:/ML/Projects/PycharmProjects/Homework3/ml_ass3/plots/ques2.py
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (2) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 2)
+('Acc', 0.958625525946704)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (4) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 4)
+('Acc', 0.9656381486676017)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+D:\ML\Projects\MLPython2VirtualEnv\lib\site-packages\sklearn\neural_network\multilayer_perceptron.py:564: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (10) reached and the optimization hasn't converged yet.
+  % self.max_iter, ConvergenceWarning)
+('Epoch', 10)
+('Acc', 0.9761570827489481)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+Iteration 11, loss = 0.05782431
+Iteration 12, loss = 0.06055255
+Iteration 13, loss = 0.05924969
+Iteration 14, loss = 0.05899687
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('Epoch', 20)
+('Acc', 0.9789621318373072)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+Iteration 11, loss = 0.05782431
+Iteration 12, loss = 0.06055255
+Iteration 13, loss = 0.05924969
+Iteration 14, loss = 0.05899687
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('Epoch', 30)
+('Acc', 0.9789621318373072)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+Iteration 11, loss = 0.05782431
+Iteration 12, loss = 0.06055255
+Iteration 13, loss = 0.05924969
+Iteration 14, loss = 0.05899687
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('Epoch', 40)
+('Acc', 0.9789621318373072)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+Iteration 11, loss = 0.05782431
+Iteration 12, loss = 0.06055255
+Iteration 13, loss = 0.05924969
+Iteration 14, loss = 0.05899687
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('Epoch', 50)
+('Acc', 0.9789621318373072)
+Iteration 1, loss = 0.37747439
+Iteration 2, loss = 0.13870206
+Iteration 3, loss = 0.11321892
+Iteration 4, loss = 0.09703166
+Iteration 5, loss = 0.08667909
+Iteration 6, loss = 0.07994014
+Iteration 7, loss = 0.06997750
+Iteration 8, loss = 0.06363686
+Iteration 9, loss = 0.06522751
+Iteration 10, loss = 0.05950952
+Iteration 11, loss = 0.05782431
+Iteration 12, loss = 0.06055255
+Iteration 13, loss = 0.05924969
+Iteration 14, loss = 0.05899687
+Training loss did not improve more than tol=0.000100 for two consecutive epochs. Stopping.
+('Epoch', 60)
+('Acc', 0.9789621318373072)
+
+Process finished with exit code 0

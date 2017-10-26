@@ -1,16 +1,22 @@
 import numpy as np
 
+from utility.scores import clip_me
+
 
 def cross_entropy_loss(y_true, y_pred):
-    y_pred = np.clip(y_pred, 1e-15, 1 - 1e-15)
-    return - y_true * np.log(y_pred) - (1 - y_true) * np.log(1 - y_pred);
+    y_pred = clip_me(y_pred)
 
+    c_e =  -1.0 * ( y_true * np.log(y_pred) +
+                    (1 - y_true) * np.log(1 - y_pred) );
+
+    return c_e
 
 
 def cross_entropy_gradient(y_true , y_pred):
-    # Avoid division by zero
-    y_pred = np.clip(y_pred, 1e-15, 1 - 1e-15)
-    return - (y_true / y_pred) + (1 - y_true) / (1 - y_pred)
+    y_pred = clip_me(y_pred)
+
+    return - (y_true / y_pred) + \
+           (1 - y_true) / (1 - y_pred)
 
 
 

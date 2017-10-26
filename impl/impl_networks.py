@@ -38,8 +38,8 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 
     for train_index , test_index in skf.split(X , y):
 
-        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=50, alpha=0.0,
-                            solver='adam', verbose=10, tol=1e-4, random_state=1,
+        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=51, alpha=1e-4,
+                            solver='adam', verbose=1, tol=1e-4, random_state=42,
                             activation=activaton
                             )
         print(mlp)
@@ -63,7 +63,7 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 
     best_model.partial_fit(X_valid , y_valid)
 
-    joblib.dump(best_model, "../models/" + prefix + "_" + activaton + "_model_pkl");
+    joblib.dump(best_model, "../models/sklearn_" + prefix + "_" + activaton + "_model_pkl");
 
 
 
@@ -91,4 +91,5 @@ def large_main(activation):
 
 
 if __name__ == '__main__':
-    small_main('sigmoid')
+    #small_main('sigmoid')
+    large_main('sigmoid')

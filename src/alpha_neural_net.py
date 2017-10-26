@@ -29,6 +29,10 @@ class AlphaNeuralNetwork():
             from helper.relu_layer import DenseReluLayer
             self.add(DenseReluLayer(n_hidden_one, input_shape=(IN_SHAPE,)))
             self.add(DenseReluLayer(n_hidden_two))
+        elif(internal_layers == 'maxout'):
+            from helper.maxout_layer import DenseMaxOutLayer
+            self.add(DenseMaxOutLayer(n_hidden_one, input_shape=(IN_SHAPE,)))
+          #  self.add(DenseMaxOutLayer(n_hidden_two))
 
         if(output_layer == 'softmax'):
             from helper.softmax_layer import DenseSoftmaxLayer
@@ -37,7 +41,7 @@ class AlphaNeuralNetwork():
             from helper.dense_layer import DenseSigmoidLayer
             self.add(DenseSigmoidLayer(class_count));
 
-        if( len(self.layers) != 3):
+        if( len(self.layers) > 3):
             raise ValueError("UNexpected Case {0} {1} Size :".format(internal_layers , output_layer , len(self.layers)))
 
     def add(self, layer):
@@ -48,18 +52,27 @@ class AlphaNeuralNetwork():
         elif (layer.input_shape[0] == -1):
             raise ValueError("Make Sure to set input size of first layer")
 
-        layer.initialize()
+        layer.initialize_weights()
         self.layers.append(layer)
 
-    def train_on_batch(self, X, y):
-        predict = self._feed_forward(X)
+    def train_on_minilbatch(self, X, y):
 
-        loss , loss_grad = cross_entropy.cross_entropy_loss_n_gradient(y , predict)
-        acc = scores.accuracy_2d_score(y, predict)
+        #neural networks and deep learnnig chapter 3
+        '''
 
-        self._feed_backward(loss_grad=loss_grad)
+        Feed Forward
+        z_l =  w_l * a_l-1 + b_l
+        '''
+        z_l = self._feed_forward(X)
 
-        return loss, acc
+        '''
+        Compute Loss
+        '''
+        loss_l , loss_l_grad = cross_entropy.cross_entropy_loss_n_gradient(y , z_l)
+
+        self._feed_backward(loss_grad=loss_l_grad)
+
+        return loss_l
 
 
     def fit(self, X, y, n_epochs, batch_size):
@@ -84,12 +97,15 @@ class AlphaNeuralNetwork():
                 #mini batch
                 X_batch = X[indices[i * batch_size:(i + 1) * batch_size]]
                 y_batch = y[indices[i * batch_size:(i + 1) * batch_size]]
-                iLoss, _ = self.train_on_batch(X_batch, y_batch)
+                iLoss  = self.train_on_minilbatch(X_batch, y_batch)
                 cummulative_batch_error += iLoss
 
             print("Epoch = {0}/{1}  = {2} ".format(i_epoch, n_epochs, cummulative_batch_error))
             from utility.scores import accuracy_score
-            self.epoch_outputs.append( accuracy_score( self.validY , self.predict(self.validX) ) );
+            try:
+                self.epoch_outputs.append( accuracy_score( self.validY , self.predict(self.validX) ) );
+            except AttributeError:
+                doNothin_cant_leave_empty = True
 
 
     def _feed_forward(self, X):

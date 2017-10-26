@@ -1,6 +1,13 @@
 import numpy as np
 
 
+#Remember to clip loss
+
+def clip_me(value):
+    value = np.clip(value, 1e-15, 1 - 1e-15)
+    return value
+
+
 def accuracy_score(y_true, y_pred):
     acc = 0.0;
     limit =np.shape(y_pred)[0]

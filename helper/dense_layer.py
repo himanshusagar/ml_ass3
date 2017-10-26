@@ -3,10 +3,9 @@ import math
 import numpy as np
 
 from helper import adam_opt
-from helper.activation_funcs import SigmoidAct as ACTIVATION
-
 
 class DenseSigmoidLayer():
+
 
     def __init__(self, n_units, input_shape=None):
         self.input_stack = []
@@ -23,22 +22,33 @@ class DenseSigmoidLayer():
         self.bias_variance = np.array([])
         ##end
 
+#############################################
+    ######### Activations
 
-    def initialize(self):
-        # Initialize the weights
-        limit = 1 / np.sqrt(self.input_shape[0])
-        self.weights = np.random.uniform(-limit, limit, (self.input_shape[0], self.n_neurons))
-        self.bias = np.zeros((1, self.n_neurons))
+    def active_func(self, x):
+        funcValue = 1.0 / (1.0 + np.exp(-x))
+        return funcValue;
 
+    def active_derivative(self, x):
+        funcValue = self.active_func(x)
+        derValue = funcValue * (1.0 - funcValue)
+        return derValue
 
+    #########################################
+    def _grad_weight_bias_pair(self , l_inp , grad):
+        grad_weights = np.dot(np.transpose(l_inp), grad)
+        grad_bias = np.sum(grad, axis=0, keepdims=True)
+        return grad_weights , grad_bias;
+
+    def _get_W_t_plus_B(self , X):
+        return np.dot(X , self.weights ) + self.bias;
 
     def feed_forward(self, X):
         self.input_stack.append( X )
-        act_inpt = X.dot(self.weights) + self.bias;
+        act_inpt = self._get_W_t_plus_B(X);
         self.activation_input_stack.append(act_inpt )
-
-        return ACTIVATION.func(act_inpt)
-
+        act_out =  self.active_func(act_inpt)
+        return act_out
 
     def _update_weights(self, grad_weights):
 
@@ -60,26 +70,35 @@ class DenseSigmoidLayer():
             = adam_opt.optimizer_update(self.bias, grad_biases , self.bias_mean , self.bias_variance)
 
 
-    def feed_backward(self, summed_grad):
+    def feed_backward(self, grad_act):
 
         act_input = self.activation_input_stack.pop()
-        summed_grad = np.multiply(summed_grad, ACTIVATION.derivative(act_input))
+        grad_total = np.multiply(grad_act, self.active_derivative(act_input))
 
         W = self.weights
         l_inp = self.input_stack.pop()
 
-        grad_weights = np.dot(np.transpose(l_inp), summed_grad)
-        grad_bias = np.sum(summed_grad, axis=0, keepdims=True)
+        grad_weights , grad_bias = \
+            self._grad_weight_bias_pair(l_inp, grad_total)
 
         self._update_weights(grad_weights)
         self._update_biases(grad_bias)
 
-        summed_grad = np.dot(summed_grad , np.transpose(W ) )
+        grad_total = np.dot(grad_total, np.transpose(W))
 
-        return  summed_grad
+        return  grad_total
 
 
     def output_shape(self):
         return (self.n_neurons,)
+
+
+    def initialize_weights(self):
+
+        limit = 1 / np.sqrt(self.input_shape[0])
+
+        self.weights = np.random.uniform(-limit, limit, (self.input_shape[0], self.n_neurons))
+
+        self.bias = np.zeros((1, self.n_neurons))
 
 

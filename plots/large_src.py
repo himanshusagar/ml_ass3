@@ -2,7 +2,7 @@ import numpy as np
 
 from src.src_networks import large_main
 import matplotlib.pyplot as plt
-MAX_EPOCH  = 81
+MAX_EPOCH  = 51
 
 if __name__ == '__main__':
 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
             exit(1);
 
 
-        x_axis_epoch = range(0 , MAX_EPOCH , 3)
+        x_axis_epoch = range(0 , MAX_EPOCH , 2)
         all_models = large_main(internal , output)
 
         y_stack = None

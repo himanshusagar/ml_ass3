@@ -24,21 +24,24 @@ if __name__ == '__main__':
 
 
         x_axis_epoch = range(0 , MAX_EPOCH , 2)
-        all_models = large_main(prefix)
+        all_models = [1,2,3,4]#large_main(prefix)
 
-        y_stack = np.empty();
+        y_stack = None# np.empty();
 
         for i in range(len(all_models)):
             y_axis = []
-            out = all_models[i].epoch_outputs
+            out = np.arange(51);#all_models[i].epoch_outputs
 
             print("out Shape" , len(out)  , np.shape(out))
 
-            for i in range(len(x_axis_epoch)):
-                y_axis.append(out[x_axis_epoch[i]])
+            for j in range(len(x_axis_epoch)):
+                y_axis.append(out[x_axis_epoch[j]])
 
-            y_stack  = np.row_stack(y_stack  , y_axis);
-
+            y_axis = np.asarray( y_axis );
+            if y_stack is not None:
+                y_stack  = np.row_stack((y_stack  , y_axis));
+            else:
+                y_stack = np.asarray(y_axis)
 
         x_axis = x_axis_epoch[:len(y_axis)]
         y_axis = None;

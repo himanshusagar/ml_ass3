@@ -6,7 +6,7 @@ MAX_EPOCH  = 51
 
 if __name__ == '__main__':
 
-    for prefix in ["ques1a" , "ques1ca" , 'ques1da' ]:
+    for prefix in ["ques1a" ]:#, "ques1ca" , 'ques1da' ]:
 
         if (prefix == 'ques1a'):
             internal = 'sigmoid'
@@ -60,6 +60,6 @@ if __name__ == '__main__':
         lgd = ax1.legend(handles, labels)
         ax1.grid('on')
 
-        plt.savefig("large_" + internal + "_"  + output)
+        plt.savefig("small_" + internal + "_"  + output)
         #plt.show()
         plt.clf()

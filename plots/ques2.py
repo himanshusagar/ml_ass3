@@ -41,23 +41,23 @@ def main(X_train , y_train , X_valid , y_valid , prefix):
 
 if __name__ == '__main__':
 
-    X_train , y_train = dataset_creater.loadIT("train")
+#     X_train , y_train = dataset_creater.loadIT("train")
+#
+#     X_valid, y_valid = dataset_creater.loadIT("test")
+#
+#     main(X_train , y_train  , X_valid ,  y_valid , 'large');
+#
+# #    exit(0)
 
-    X_valid, y_valid = dataset_creater.loadIT("test")
+    X_raw, y = dataset_creater.loadSmallbset();
 
-    main(X_train , y_train  , X_valid ,  y_valid , 'large');
+    X = np.zeros((X_raw.shape[0], 784))
+    for i in xrange(np.shape(X)[0]):
+        X[i] = X_raw[i].flatten()
 
-#    exit(0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
-    # X_raw, y = dataset_creater.loadSmallbset();
-    #
-    # X = np.zeros((X_raw.shape[0], 784))
-    # for i in xrange(np.shape(X)[0]):
-    #     X[i] = X_raw[i].flatten()
-    #
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
-    #
-    # main(X_train, y_train, X_test, y_test , "small")
+    main(X_train, y_train, X_test, y_test , "small")
 
 
 

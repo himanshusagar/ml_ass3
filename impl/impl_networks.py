@@ -43,7 +43,7 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
 
 
         from plots.large_src import MAX_EPOCH
-        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=MAX_EPOCH, alpha=1e-4,
+        mlp = MLPClassifier(hidden_layer_sizes=(50, 100), max_iter=100, alpha=1e-4,
                             solver='adam', verbose=1, tol=1e-4, random_state=42,
                             activation=activaton
                             )
@@ -60,6 +60,7 @@ def k_fold_compute(X, y, X_valid, y_valid, activaton=None, prefix=None):
             best_accuracy = iter_accuracy
             best_model = mlp
         print("iFold Accuracy : ", iter_accuracy, " Best:", best_accuracy)
+        break
 
     y_pred = best_model.predict(X_valid)
     valid_accuracy = accuracy_score(y_valid , y_pred)
@@ -96,4 +97,4 @@ def large_main(activation):
 
 if __name__ == '__main__':
     #small_main('sigmoid')
-    large_main('sigmoid')
+    small_main('sigmoid')
